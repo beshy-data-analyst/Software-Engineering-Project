@@ -126,7 +126,7 @@ The document includes detailed usage instructions and screenshots explaining how
 You can access the live demo of the project here:
 
 🔗 [https://kero-2005-samir.github.io/Go-cheap-project/](https://kero-2005-samir.github.io/Go-cheap-project/)
-
+[![Go Cheap](https://img.shields.io/badge/Go%20Cheap-Live%20Website-green?style=for-the-badge&logo=python)](https://nullpointers.pythonanywhere.com)
 ---
 
 ## 🚀 Future Enhancements
