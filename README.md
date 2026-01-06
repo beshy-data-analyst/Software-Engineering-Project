@@ -1,5 +1,5 @@
 ![Django](https://img.shields.io/badge/Django-3.2-green) ![SQL Server](https://img.shields.io/badge/SQL%20Server-2019-blue) ![HTML5](https://img.shields.io/badge/HTML5-orange) ![CSS3](https://img.shields.io/badge/CSS3-blue) ![JavaScript](https://img.shields.io/badge/JavaScript-yellow)
-![pythonanywhere](https://www.pythonanywhere.com/)
+[![PythonAnywhere](https://img.shields.io/badge/PythonAnywhere-Visit-blue?logo=python)](https://www.pythonanywhere.com/)
 # Go Cheap 🚗💸
 
 Go Cheap is a web-based ride comparison platform designed to help users find the most affordable and suitable trip by comparing offers from multiple ride-hailing companies in one unified interface.
