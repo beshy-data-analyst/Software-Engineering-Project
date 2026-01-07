@@ -1,0 +1,205 @@
+body::-webkit-scrollbar {
+    display: none;
+}
+body, html {
+    width: 100%;
+    overflow-x: hidden;
+}
+:root {
+    scroll-behavior: smooth;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.design {
+    transition: 0.5s;
+    box-shadow: 0 0 10px blue;
+    font-size: 18px;
+}
+.sign-out{
+    width:100px;
+}
+.design:hover {
+    transform: scale(1.1);
+}
+.btn{
+    transition: 0.5s;
+}
+
+.first{
+    background-image: url(../images/bg7.jpg);
+    background-color: rgba(0, 0, 0, 0.249);
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* padding-bottom: 100px; */
+    height: 100vh;
+}
+
+.btn-detail{
+    transition: 0.5s;
+    font-size: 18px;
+    
+}
+.btn-detail:hover{
+    box-shadow: 0 0 10px black;
+    transform: scale(1.05);
+
+}
+
+.word {
+    font-size: 4vw;
+    text-transform: capitalize;
+    color: white;
+    opacity: 0.8;
+}
+
+
+.go {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.nav-item a:hover {
+    transform: scale(1.1);
+}
+
+.navbar-item {
+    position: relative;
+    transition: 0.5s;
+}
+
+.navbar-item::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0%;
+    transform: translateX(-50%);
+    height: 2px;
+    background-color: #ffc107;
+    transition: 0.5s;
+}
+
+.navbar-item:hover::after {
+    width: 90%;
+}
+/* -------service page----------- */
+#service{
+    background-color: #eee;
+}
+/* cards */
+.ride-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: 0.4s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.ride-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0px 35px rgba(0, 0, 0, 0.2);
+}
+
+.ride-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.company {
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+.uber{
+    background-color: black;
+}
+.indrive{
+    background-color: #689f38;
+}
+.didi{
+    background-color: #ff4b01;
+}
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #198754;
+}
+
+.ride-body p {
+    margin: 6px 0;
+    font-size: 15px;
+    color: #333;
+}
+
+.ride-footer {
+    margin-top: 15px;
+}
+
+/* contact */
+
+#contact{
+    background-color: #f8f9fa;
+}
+.contact-box {
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-box:hover {
+    transform: scale(1.03);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.social{
+    transition: 0.3s ease;
+}
+.social:hover{
+    transform: scale(1.2);
+}
+.facebook i{
+    color: #1877F2;
+}
+.insta i{
+    color: #E4405F;
+}
+.twitter i{
+    color: #1DA1F2;
+}
+.linkedin i{
+    color: #0A66C2;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+/* footer */
+footer{
+    padding-block: 10px;
+}
+
+
+@media (width<800px) {
+    .word{
+        font-size: 30px;
+    }
+    .sign-out{
+        width: 100vw;
+        margin-left: 0;
+        font-size: 20px;
+
+    }
+}

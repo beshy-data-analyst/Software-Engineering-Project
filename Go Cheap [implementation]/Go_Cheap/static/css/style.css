@@ -1,0 +1,263 @@
+body::-webkit-scrollbar {
+    display: none;
+}
+
+:root {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../images/White\ and\ Orange\ Dynamic\ Car\ Dealer\ Presentation.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+
+.container {
+    position: relative;
+    width: 800px;
+    height: 500px;
+    background: #ffffff21;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Forms */
+.form-container {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    padding: 40px;
+    transition: 0.6s ease;
+}
+
+.login {
+    left: 0;
+    top: 5%;
+}
+
+.register {
+    /* margin-top: -40px; */
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.container.active .login {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.container.active .register {
+    transform: translateX(100%);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: solid 2px black;
+}
+.inp{
+    border: none;
+    background-color: transparent;
+    border-bottom: solid 2px black;
+}
+label{
+    color: rgba(0, 0, 0, 0.626);
+}
+
+input::placeholder {
+    font-size: 18px;
+    transition: 0.3s ease;
+    color: rgba(0, 0, 0, 0.626);
+}
+
+button ,a{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    /* margin-top: 10px; */
+    transition: 0.5s ease;
+}
+
+a{
+    display: inline-flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+button:hover ,
+a:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #b03a3aa6;
+}
+
+/* Overlay */
+.overlay {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea, #764ba28c);    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: 0.6s ease;
+}
+
+.container.active .overlay {
+    transform: translateX(-100%);
+}
+
+.overlay button {
+    background: transparent;
+    border: 1px solid white;
+    width: 150px;
+    margin-top: 20px;
+}
+
+.overlay button:hover {
+    background: white;
+    color: #667eea;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.466);
+}
+
+/*----------------Loading Page----------------*/
+
+.preloader {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    /* overflow: hidden; */
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    transition: opacity 0.8s ease, top 0.8s ease;
+}
+
+.log {
+    width: 18vw;
+    opacity: 0.7;
+    /* margin-bottom: 50vh; */
+    /* margin-top: 45vh; */
+}
+
+.gif {
+    width: 21vw;
+    float: left;
+    opacity: 0.7;
+    /* margin-bottom: 50vh; */
+    /* margin-top: 45vh; */
+    position: absolute;
+    top: 0;
+    transform: translateX(-90%);
+    /* left: 0; */
+}
+
+@media (width<800px) {
+    .gif {
+        margin-top: 200px;
+        width: 30vw;
+
+    }
+
+    .log {
+        margin-top: 200px;
+        width: 25vw;
+
+    }
+}
+
+.car-track {
+    position: relative;
+    width: 300px;
+    margin-block: 15px;
+    margin-top: 50px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 14px;
+    background: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar span {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: #ffd18a;
+    animation: loading 3s linear infinite;
+}
+
+@keyframes moveCar {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: 260px;
+    }
+}
+
+@keyframes loading {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+.car-track p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+}
+
+@media (width<500px) {
+    .form-container{
+        padding-inline: 5px;
+    }
+    
+}

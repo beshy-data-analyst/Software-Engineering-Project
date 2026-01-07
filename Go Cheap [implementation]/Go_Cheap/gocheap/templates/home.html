@@ -1,0 +1,265 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Go cheap</title>
+  <link rel="stylesheet" href= {% static 'css/bootstrap.css'%}>
+  <link rel="stylesheet" href={% static 'fontawesome/css/all.css'%}>
+  <link rel="stylesheet" href={% static 'css/style1.css'%}>
+  <link rel="shortcut icon" href={% static 'images/images (1).jpeg'%} type="image/x-icon">
+  <script src={% static 'javaScript/bootstrap.bundle.js'%}></script>
+</head>
+
+<body>
+  <main class="container-fluid g-0">
+    <!-- navbar section -->
+    <div class="first">
+      <header class="pt-3">
+        <nav class="navbar navbar-expand-md navbar-dark col-lg-10 mx-auto mb-5">
+          <div class="container-fluid">
+            <a class="navbar-brand  fs-2 fw-bold text-black fst-italic" href="#">Go cheap</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse offset-md-4 offset-lg-5 offset-xl-6" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active fs-5  navbar-item text-center me-2" aria-current="page"
+                    href="#home-page">Home</a>
+                </li>
+
+                <li class="nav-item ">
+                  <a class="nav-link active fs-5 navbar-item text-center me-2" href="#service">Service</a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link active fs-5 navbar-item text-center me-2" href="#about">About</a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link active fs-5 navbar-item text-center me-2" href="#contact">Contact</a>
+                </li>
+              </ul>
+              <div class="offset-0">
+                <a href="{% url 'login' %}" class="btn btn-primary  design sign-out me-2">Sign out</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <!----------------------------------- home page ---------------------------------->
+
+      <div class="container-fluid d-flex align-items-center row-cols-1 flex-wrap home-page" id="home-page">
+        <div class="col-sm-9 col-sm-12 ps-2  ps-md-5 ms-md-5">
+          <p class=" fw-bold word">Your getway to
+            <br>any destination in <br>
+            Hurghada
+          </p>
+          <p class=" text-warning fs-3 fw-medium word2">Find the easiest and fastest way to reach your
+            destination.</p>
+          <p class="mt-2 text-warning ms-0 go">Let's Go</p>
+
+          <a href="#service" class="btn btn-primary my-3  text-white design">Get started</a>
+          <a href="#about" class="btn btn-warning my-3  text-white ms-4 btn-detail">More detailed</a>
+
+        </div>
+      </div>
+    </div>
+    
+    <!------------------------------------- service section ------------------------------->
+
+    <section id="service" class="container-fluid py-5 ">
+      <div class="container">
+        <!-- Search Title -->
+        <div class="text-center mb-4">
+          <h2 class="fw-bold text-warning">Search Pickup & Destination</h2>
+          <p class="text-muted">Find the best ride options for your journey</p>
+        </div>
+
+        <!-- Search Inputs -->
+       <form action="" method="get">
+  <div class="row justify-content-center mb-5">
+    <div class="col-md-4 mb-sm-2 mb-3">
+      <input type="text" class="form-control" list="datalistOptions" id="exampleDataList"
+             placeholder="Pickup location" name="pickup" value="{{ pickup }}">
+      <datalist id="datalistOptions">
+        <option value="Airport">
+        <option value="ElDahar">
+        <option value="El Gouna">
+        <option value="Hurghada Marina">
+        <option value="Sahl Hasheesh">
+        <option value="Al Mamsha">
+        <option value="Makadi Bay">
+        <option value="El Kawther">
+        <option value="Village Road">
+        <option value="Sheraton Road">
+        <option value="Hadaba">
+      </datalist>
+    </div>
+    <div class="col-md-4 mb-sm-2 mb-4">
+      <input type="text" class="form-control" list="pickup_list" id="pickup_input"
+             placeholder="Destination" name="destination" value="{{ dropoff }}">
+      <datalist id="pickup_list">
+        <option value="Airport">
+        <option value="ElDahar">
+        <option value="El Gouna">
+        <option value="Hurghada Marina">
+        <option value="Sahl Hasheesh">
+        <option value="Al Mamsha">
+        <option value="Makadi Bay">
+        <option value="El Kawther">
+        <option value="Village Road">
+        <option value="Sheraton Road">
+        <option value="Hadaba">
+      </datalist>
+    </div>
+
+    <div class="col-md-2 mb-2">
+      <button type="submit" class="btn btn-primary w-100 design">Search</button>
+    </div>
+  </div>
+</form>
+
+        <!-- Cards -->
+<div class="row g-4">
+  {% if trips %}
+    {% for trip in trips %}
+      <div class="col-md-6 col-lg-4">
+        <div class="ride-card">
+          <div class="ride-header">
+            <span class="company {{ trip.Company.CompanyName|lower }}">{{ trip.Company.CompanyName }}</span>
+            <span class="price">${{ trip.Price }}</span>
+          </div>
+          <div class="ride-body">
+            <h5 class="card-title">{{ trip.PickupArea }} → {{ trip.DropoffArea }}</h5>
+            <p><strong>Driver:</strong> {{ trip.Driver.Name }}</p>
+            <p><strong>Car model:</strong> {{ trip.Driver.CarModel }}</p>
+            <p><strong>Trip duration:</strong> {{ trip.TripDurationMin }} min</p>
+            <p><strong>Distance:</strong> {{ trip.DistanceKM }} KM</p>
+          </div>
+          <div class="ride-footer">
+           <a 
+  href="{% if trip.Company.CompanyName == 'Uber' %}https://www.uber.com/eg/en/
+        {% elif trip.Company.CompanyName == 'InDrive' %}https://indrive.com/en-eg
+        {% elif trip.Company.CompanyName == 'DiDi' %}https://web.didiglobal.com/eg/rider/
+        {% else %}#{% endif %}" 
+  class="btn btn-outline-primary" target="_blank">
+    Choose Ride
+</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  {% else %}
+    <div class="col-12">
+      <p class="text-center text-danger fw-bold">No trips found matching your search criteria.</p>
+    </div>
+  {% endif %}
+</div>
+
+    <!-------------------------------------- about section ---------------------------->
+
+    <section id="about" class="container my-5 py-5 ">
+      <div class="row align-items-center g-5">
+
+        <h2 class="fw-bold mb-4 text-warning text-center fs-1">About Us</h2>
+        <!-- Text Left -->
+        <div class="col-md-6">
+          <h2 class="fw-bold mb-4">Why Choose Go Cheap?</h2>
+          <p class="fs-5 text-muted mb-4">
+            Go Cheap simplifies your transportation experience by showing you all
+            available ride options in one place. No need to open multiple apps or
+            compare prices manually — we provide clear and fast choices so you can
+            save time, money, and effort.
+          </p>
+
+
+          <ul class=" fs-5 text-dark">
+            <li class="mb-2"> <strong>Compare All Options</strong></li>
+            <li class="mb-2"> <strong>Fast & Reliable</strong> </li>
+            <li class="mb-2"> <strong>Affordable Prices</strong></li>
+            <li class="mb-2"> <strong>User-Friendly</strong> </li>
+            <li class="mb-2"> <strong>Local Coverage</strong></li>
+          </ul>
+        </div>
+
+        <!-- Logo Right -->
+        <div class="col-md-6 text-center">
+          <img src={% static 'images/Black and White Automotive Logo.png'%} alt="Go Cheap Logo" class="img-fluid rounded "
+            style="max-width: 400px;">
+        </div>
+      </div>
+    </section>
+
+    <!----------------------------- contact page --------------------------------------->
+
+    <section id="contact" class="container-fluid py-5">
+      <div class="container text-center">
+
+        <h2 class="fw-bold text-warning mb-4">Get in Touch</h2>
+        <p class="text-muted fs-5 mb-5">
+          Have a question or want to connect with us? Reach out through any of the channels below.
+        </p>
+
+        <!-- Contact Info -->
+        <div class="row justify-content-center mb-5">
+
+          <!-- Email -->
+          <div class="col-md-3 mb-4">
+            <div class="contact-box p-4 rounded-4 shadow-sm">
+              <i class="fas fa-envelope fa-2x mb-2 text-primary"></i>
+              <h5 class="fw-bold mb-1">Email</h5>
+              <p class="mb-0"><a href="mailto:null_pointers@gmail.com">null_pointers@gmail.com</a></p>
+            </div>
+          </div>
+
+          <!-- Phone -->
+          <div class="col-md-3 mb-4">
+            <div class="contact-box p-4 rounded-4 shadow-sm">
+              <i class="fas fa-phone fa-2x mb-2 text-primary"></i>
+              <h5 class="fw-bold mb-1">Phone</h5>
+              <p class="mb-0"><a href="tel:01017539009">01017539009</a></p>
+            </div>
+          </div>
+
+          <!-- Social -->
+          <div class="col-md-3 mb-4">
+            <div class="contact-box p-4 rounded-4 shadow-sm">
+              <i class="fas fa-share-alt fa-2x mb-2 text-primary"></i>
+              <h5 class="fw-bold mb-2">Follow Us</h5>
+              <div class="d-flex justify-content-center gap-3 fs-4">
+                <a href="#" class="text-dark social facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-dark social insta"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-dark social twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-dark social linkedin"><i class="fab fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Google Map -->
+        <div class="map-container rounded shadow-sm overflow-hidden" style="height: 400px;">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d59327.9509383505!2d33.82492417637376!3d27.205481550379755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sar!2seg!4v1767240538923!5m2!1sar!2seg"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+
+      </div>
+    </section>
+    <!-- footer -->
+    <footer class=" bg-dark text-white">
+            <marquee behavior="" direction="" scrollamount="8" class="text-uppercase">
+                copyrights &copy; reserved 2025 by <span class="text-warning">Null pointers team</span>
+            </marquee>
+         </footer>
+  </main>
+
+  <script src={% static 'javaScript/script.js'%}></script>
+</body>
+
+</html>

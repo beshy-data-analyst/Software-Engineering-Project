@@ -1,0 +1,99 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Go cheap</title>
+  <link rel="stylesheet" href= {% static 'css/bootstrap.css'%}>
+  <link rel="stylesheet" href={% static 'fontawesome/all.css'%}>
+  <link rel="stylesheet" href={% static 'css/style.css'%}>
+  <link rel="shortcut icon" href={% static 'images/images (1).jpeg'%} type="image/x-icon">
+  <script src={% static 'javaScript/bootstrap.bundle.js'%}></script>
+</head>
+
+<body>
+  <!-- loading page -->
+  <div class="preloader" id="preloader">
+    <div class="logo">
+      <img src={%static 'images/Black and White Automotive Logo.png'%} alt="" class="log">
+      <img src={% static 'images/loader car drift.gif'%} alt="" class="gif">
+    </div>
+    <div class="car-track">
+      <div class="progress-bar">
+        <span></span>
+      </div>
+    </div>
+    <p>Loading...</p>
+  </div>
+  <div class="container" id="container">
+
+<!-- Login -->
+<form action="" method="POST" id="loginForm">
+  {% csrf_token %}
+  <div class="form-container login">
+    <h2>Login</h2>
+    <div class="form-floating mb-3">
+      <input type="email" class="form-control bg-transparent inp" id="loginEmail" name="email" placeholder="Email" required>
+      <label for="loginEmail" class="text-dark">Email address</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="password" class="form-control bg-transparent inp" id="loginPassword" name="password" placeholder="Password" required>
+      <label for="loginPassword" class="text-dark">Password</label>
+    </div>
+    {% if login_error %}
+       <p style="color:red">{{ login_error }}</p>
+    {% endif %}
+    <button type="submit" name="login">Login</button>
+  </div>
+</form>
+
+<!-- Register -->
+<form action="" method="POST" id="registerForm">
+  {% csrf_token %}
+  <div class="form-container register">
+    <h2>Register</h2>
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control bg-transparent inp" id="registerName" name="name" placeholder="Username" required>
+      <label for="registerName" class="text-dark">Name</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="email" class="form-control bg-transparent inp" id="registerEmail" name="email" placeholder="Email" required>
+      <label for="registerEmail" class="text-dark">Email address</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="tel" class="form-control bg-transparent inp" id="registerPhone" name="phone" placeholder="Phone" maxlength="11" required>
+      <label for="registerPhone" class="text-dark">Phone</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="password" class="form-control bg-transparent inp" id="registerPassword" name="password" placeholder="Password" required>
+      <label for="registerPassword" class="text-dark">Password</label>
+    </div>
+
+    {% if signup_error %}
+       <p style="color:red">{{ signup_error }}</p>
+    {% endif %}
+
+    <button type="submit" name="signup">Register</button>
+  </div>
+</form>
+    <!-- Overlay -->
+    <div class="overlay">
+      <h2>Hello, Friend!</h2>
+      <p>Don't have an account?</p>
+      <button onclick="showRegister()">Register</button>
+      <br>
+      <button onclick="showLogin()">Login</button>
+    </div>
+
+  </div>
+
+  <script src={% static 'javaScript/script.js'%}></script>
+
+</body>
+
+</html>
