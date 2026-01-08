@@ -116,6 +116,10 @@ Each card includes a button that redirects the user to the official website link
 * Microsoft SQL Server
 * Structured relational data storage
 
+### 🔹 Deployment
+
+* pythonanywhere
+
 ---
 
 ## 📘 User Manual
