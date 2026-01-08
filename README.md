@@ -148,17 +148,28 @@ You can access the live demo of the project here:
 ## 🚀 Future Enhancements
 
 In future versions of Go Cheap, the following features can be added to improve the system:
-* Forgot Password
-* Email Verification
-* Live Location via Map
-* Company API Integration
-* Go Cheap Official Account
-    *select trip
-    *payment method
-    *rate
-* Emergency Button (SOS)
-* Payment with Go Cheap
-* History
+- Authentication & Security
+  - Forgot Password
+  - Email Verification
+
+- Location Services
+  - Live Location via Map
+
+- Integrations
+  - Company API Integration
+
+- Go Cheap Official Account
+  - Select Trip
+  - Payment Method
+  - Rate
+
+- Safety
+  - Emergency Button (SOS)
+
+- Payments
+  - Payment with Go Cheap
+
+- History
 ---
 
 ## 👥 Team Information
