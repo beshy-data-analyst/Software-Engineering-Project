@@ -148,15 +148,17 @@ You can access the live demo of the project here:
 ## 🚀 Future Enhancements
 
 In future versions of Go Cheap, the following features can be added to improve the system:
-* Real-time API integration with ride-hailing companies
-* In-app trip booking without redirection
-* Online payment support
-* Price history and smart price comparison
-* User ratings and reviews for drivers and companies
-* Mobile application version (Android & iOS)
-* Location detection using GPS
-* AI-based recommendations for the cheapest and fastest trip
-
+1.Forgot Password
+2. Email Verification
+3. Live Location via Map
+4. Company API Integration
+5. Go Cheap Official Account
+    *select trip
+    *payment method
+    *rate
+6. Emergency Button (SOS)
+7.Payment with Go Cheap
+8.History
 ---
 
 ## 👥 Team Information
