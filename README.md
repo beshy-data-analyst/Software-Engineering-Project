@@ -19,7 +19,14 @@ The system allows users to register, log in, search for trips by selecting picku
 Each option is presented clearly, enabling users to make an informed decision quickly and efficiently.
 
 ---
+## 🎯 Project Objective
 
+The primary objective of Go Cheap is to:
+
+* Help users find the most cost-effective ride
+* Eliminate the need to switch between multiple ride-hailing applications
+* Provide a clean, secure, and user-friendly comparison experience
+---
 ## 🔐 Authentication & Security
 
 * Secure Login & Registration system
@@ -162,10 +169,4 @@ Team Name: NULL POINTERS
 
 ---
 
-## 🎯 Project Objective
 
-The primary objective of Go Cheap is to:
-
-* Help users find the most cost-effective ride
-* Eliminate the need to switch between multiple ride-hailing applications
-* Provide a clean, secure, and user-friendly comparison experience
